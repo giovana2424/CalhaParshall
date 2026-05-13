@@ -1,6 +1,6 @@
 package model;
 
-import java.math.BigDecimal;
+import java.math.*;
 
 public class VazaoPorW {
     private String w;

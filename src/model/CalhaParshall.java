@@ -1,11 +1,12 @@
 package model;
 
-import java.math.BigDecimal;
+import service.CalculadoraService;
 
-public class Calha {
+import java.math.*;
+
+public class CalhaParshall {
     private BigDecimal altura;
     private BigDecimal largura;
     private BigDecimal alturaAgua;
     private BigDecimal pctgemAlturaAgua;
-
 }

@@ -2,7 +2,7 @@ package repository;
 
 import model.VazaoPorW;
 
-import java.math.BigDecimal;
+import java.math.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
