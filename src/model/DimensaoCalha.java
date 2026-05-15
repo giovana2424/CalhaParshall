@@ -11,4 +11,17 @@ public class DimensaoCalha {
         this.e = e;
     }
 
+    public BigDecimal getE() {
+        return e;
+    }
+
+    public String getW() {
+        return w;
+    }
+
+    @Override
+    public String toString() {
+        return "W: "+w+
+                "| E: "+e;
+    }
 }

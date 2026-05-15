@@ -3,27 +3,43 @@ package model;
 import java.math.*;
 
 public class Cidade {
-    private BigInteger qtdHabitante;
-    private BigDecimal consumoAgua;
+    private BigInteger populacao;
+    private BigDecimal consumo;
 
-    public Cidade(BigInteger qtdHabitante, BigDecimal consumoAgua) {
-        this.qtdHabitante = qtdHabitante;
-        this.consumoAgua = consumoAgua;
+    public void setPopulacao(BigInteger populacao)
+    {
+        this.populacao = populacao;
     }
 
-    public void setQtdHabitante(BigInteger qtdHabitante) {
-        this.qtdHabitante = qtdHabitante;
+    public void setConsumo(BigDecimal consumo)
+    {
+        this.consumo = consumo;
     }
 
-    public void setConsumoAgua(BigDecimal consumoAgua) {
-        this.consumoAgua = consumoAgua;
+    public BigDecimal getConsumo()
+    {
+        return consumo;
     }
 
-    public BigDecimal getVazaoDia(){
-        return this.consumoAgua.multiply(new BigDecimal(this.qtdHabitante));
+    public BigInteger getPopulacao()
+    {
+        return populacao;
+    }
+
+    public BigDecimal getVazaoDia()
+    {
+        return this.consumo.multiply(new BigDecimal(this.populacao));
     }
 
     public BigDecimal getVazaoSegundo(){
         return getVazaoDia().divide(BigDecimal.valueOf(86400), 2, RoundingMode.HALF_UP);
+    }
+
+    @Override
+    public String toString() {
+        return "População: "+populacao+
+                "| Consumo por dia por habitante: "+consumo+
+                "| Vazão por dia: "+getVazaoDia()+
+                "| Vazão segundo: "+getVazaoSegundo();
     }
 }

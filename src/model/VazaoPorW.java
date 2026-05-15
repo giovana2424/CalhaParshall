@@ -17,6 +17,28 @@ public class VazaoPorW {
         this.n = n;
     }
 
+    public BigDecimal getK() {
+        return k;
+    }
 
+    public String getW() {
+        return w;
+    }
 
+    public BigDecimal getMaxVazao() {
+        return maxVazao;
+    }
+
+    public BigDecimal getMinVazao() {
+        return minVazao;
+    }
+
+    public BigDecimal getN() {
+        return n;
+    }
+
+    @Override
+    public String toString() {
+        return "W: "+w+" | Vazão máxima: "+maxVazao+" | Vazão mínima: "+minVazao+" | N:"+n;
+    }
 }
