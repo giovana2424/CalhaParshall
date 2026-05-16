@@ -3,39 +3,46 @@ package model;
 import java.math.*;
 
 public class CalhaParshall {
-    private BigDecimal altura;
-    private String largura;
-    private BigDecimal alturaAgua;
-    private BigDecimal pctgemAlturaAgua;
+    BigDecimal K;
+    BigDecimal N;
 
-    public CalhaParshall(BigDecimal altura, String largura, BigDecimal alturaAgua, BigDecimal pctgemAlturaAgua){
-        this.altura = altura;
-        this.largura = largura;
-        this.alturaAgua = alturaAgua;
+    private BigDecimal alturaE;
+    private String larguraW;
+    private BigDecimal alturaAguaH;
+    private BigDecimal pctgemAlturaAgua;
+    private BigDecimal alturaAguaHcm;
+
+    public CalhaParshall(BigDecimal K, BigDecimal N, BigDecimal altura, String largura, BigDecimal alturaAgua, BigDecimal alturaAguaHcm, BigDecimal pctgemAlturaAgua){
+        this.K = K;
+        this.N = N;
+        this.alturaE = altura;
+        this.larguraW = largura;
+        this.alturaAguaH = alturaAgua;
+        this.alturaAguaHcm = alturaAguaHcm;
         this.pctgemAlturaAgua = pctgemAlturaAgua;
     }
 
-    public BigDecimal getAltura() {
-        return altura;
+    public BigDecimal getK(){return K;}
+
+    public BigDecimal getN(){return N;}
+
+    public BigDecimal getAlturaE() {
+        return alturaE;
     }
 
-    public BigDecimal getAlturaAgua() {
-        return alturaAgua;
+    public BigDecimal getAlturaAguaH() {
+        return alturaAguaH;
     }
 
-    public String getLargura() {
-        return largura;
+    public BigDecimal getAlturaAguaHcm() {
+        return alturaAguaHcm;
+    }
+
+    public String getLarguraW() {
+        return larguraW;
     }
 
     public BigDecimal getPctgemAlturaAgua() {
         return pctgemAlturaAgua;
-    }
-
-    @Override
-    public String toString() {
-        return "Altura da Calha: "+altura+
-                "| Largura da Calha: "+largura+
-                "| Altura da água: "+alturaAgua+
-                "| Porcentagem da altura a água em comparação com a altura da calha: "+pctgemAlturaAgua;
     }
 }

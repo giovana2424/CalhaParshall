@@ -16,16 +16,6 @@ public class Cidade {
         this.consumo = consumo;
     }
 
-    public BigDecimal getConsumo()
-    {
-        return consumo;
-    }
-
-    public BigInteger getPopulacao()
-    {
-        return populacao;
-    }
-
     public BigDecimal getVazaoDia()
     {
         return this.consumo.multiply(new BigDecimal(this.populacao));
@@ -35,11 +25,8 @@ public class Cidade {
         return getVazaoDia().divide(BigDecimal.valueOf(86400), 2, RoundingMode.HALF_UP);
     }
 
-    @Override
-    public String toString() {
-        return "População: "+populacao+
-                "| Consumo por dia por habitante: "+consumo+
-                "| Vazão por dia: "+getVazaoDia()+
-                "| Vazão segundo: "+getVazaoSegundo();
+    public BigDecimal getVazaoMetros(){
+        return getVazaoSegundo().divide(BigDecimal.valueOf(1000), 2);
     }
+
 }

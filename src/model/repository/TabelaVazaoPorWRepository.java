@@ -18,7 +18,7 @@ public class TabelaVazaoPorWRepository {
             ),
             Map.entry(
                     new BigDecimal("251.9"),
-                    new VazaoPorW("9\"", new BigDecimal("2.55"), new BigDecimal("251.9"), new BigDecimal("0.5354"), new BigDecimal("1.530"))
+                    new VazaoPorW("9\"", new BigDecimal("2.55"), new BigDecimal("251.9"), new BigDecimal("0.5334"), new BigDecimal("1.530"))
             ),
             Map.entry(
                     new BigDecimal("455.6"),

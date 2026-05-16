@@ -1,35 +1,29 @@
 package controller;
 
 import model.Cidade;
+import model.service.Service;
 import view.View;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
 
 public class CidadeController {
     private final Cidade cidade;
     private final View view;
-
-    public CidadeController(Cidade cidade, View view){
+    private final Service service;
+    public CidadeController(Cidade cidade, View view, Service service){
         this.cidade = cidade;
         this.view = view;
+        this.service = service;
     }
 
 
     public void update(){
+        cidade.setPopulacao(view.readPopulacao());
         cidade.setConsumo(view.readConsumo());
-        cidade.setPopulacao(view.readPopulação());
-    }
-
-    public void vazaoDia(){
-        cidade.getVazaoDia();
-    }
-
-    public void vazaoSec(){
-        cidade.getVazaoSegundo();
     }
 
     public void print(){
-        view.printVazão(cidade.getVazaoDia(), cidade.getVazaoSegundo());
+        view.printVazao(cidade.getVazaoDia(), cidade.getVazaoSegundo(), cidade.getVazaoMetros());
+    }
+    public void print2(){
+        view.printResultado(service.calculandoH(cidade));
     }
 }
